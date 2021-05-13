@@ -1,0 +1,38 @@
+{
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "editor.background": "#12171D",
+        "activityBar.background": "#12171D",
+        "editorGroupHeader.tabsBackground": "#12171D",
+        "statusBar.background":"#12171D",
+        "titleBar.activeBackground": "#12171D",
+        "sideBar.background": "#12171D",
+        "tab.inactiveBackground": "#171e27",
+        "terminal.background":"#12171D"
+    },
+    "python.languageServer": "Pylance",
+    "workbench.colorTheme": "Atomize",
+    "workbench.preferredDarkColorTheme": "Atomize",
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "window.titleBarStyle": "custom",
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": 1,
+    "python.pythonPath": "/usr/bin/python3",
+    "editor.renderWhitespace": "all",
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": false,
+    "window.menuBarVisibility": "toggle"
+}
