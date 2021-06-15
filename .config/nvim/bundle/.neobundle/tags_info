@@ -1,0 +1,14 @@
+coc.nvim
+ctrlp.vim
+neobundle.vim
+neosnippet-snippets
+neosnippet.vim
+nerdtree
+syntastic
+vim-airline
+vim-airline-themes
+vim-css-color
+vim-fugitive
+vim-indent-guides
+vimshell
+youcompleteme
