@@ -1,0 +1,20 @@
+/**
+ * Josiah Hilden
+ * 2021
+ * vim:ft=css
+ */
+
+configuration {
+	modi: "drun,run";
+	show-icons: true;
+	terminal: "alacritty";
+	theme: "lower";
+	lines: 8;
+	sidebar-mode: true;
+	matching: "fuzzy"; // Seems to fuck up searching for apps for some reason
+	sorting: "fzf"; // This seems to fix fuzzy matching
+	kb-mode-next: "Super+Tab,Super+space";
+	//window-format: "{c}";
+	window-match-fields: "class"; // title?
+	drun-match-fields: "name"; //
+}

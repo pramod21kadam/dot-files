@@ -1,0 +1,101 @@
+/**
+ * Josiah Hilden, for i3-notifier window.
+ * vim:ft=css
+ */
+
+configuration {
+	columns: 1;
+	eh: 2;
+	kb-accept-entry: "Control+j,Control+m,Return,KP_Enter,space";
+	kb-custom-1: "Delete,d";
+	kb-remove-char-forward: "";
+	kb-row-down: "Down,Control+n,j";
+	kb-row-up: "Up,Control+p,k";
+	me-accept-entry: "MousePrimary";
+	me-select-entry: "";
+	show-icons: true;
+}
+
+@import "mag-colorscheme.rasi"
+
+
+#window {
+	
+	width: 30%;
+
+	/* Make the window show up at the bottom of the screen */
+	location:	north;
+	anchor:		north;
+
+	text-color: @foreground;
+	background-color: @trans;
+
+	y-offset: 15px;
+
+}
+
+/* Configure the layout for the main box interactions */
+#mainbox {
+	children: [ top-bar, listview, message ];
+}
+
+/**
+ * Create the top bar
+ */
+#top-bar {
+	expand: false;
+	padding: 1em;
+	children: [ top-spacer, textbox-name, top-spacer ];
+	background-color: @background;
+	margin: -5px 0 -5px 0;
+}
+
+#top-spacer {
+	expand: true;
+}
+
+#textbox-name {
+	expand: false;
+	font: @font-lg;
+	content: "notifications";
+}
+
+/**
+ * Create the list view
+ */
+
+#listview {
+	scrollbar: false;
+	background-color: @background-t;
+
+	reverse: false;
+	fixed-height: false;
+	lines: 10;
+	dynamic: true;
+
+	margin: 0 0 -5px 0;
+
+}
+
+#element {
+	padding: 1em 1em 1em 1em;
+	background-color: @trans;
+}
+
+#element selected {
+	background-color: @primary;
+	text-color: @primary-bg;
+}
+
+#element active {
+	text-color: @primary;
+}
+
+#element urgent {
+	text-color: @alert;
+}
+
+#element-icon {
+	padding: 0 1em 0 0;
+	size: 1.5em;
+}

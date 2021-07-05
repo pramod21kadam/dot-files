@@ -1,0 +1,114 @@
+/**
+ * Josiah Hilden
+ * vim:ft=css
+ */
+
+@import "mag-colorscheme.rasi"
+
+#window {
+	
+	width: 30%;
+
+	/* Make the window show up at the bottom of the screen */
+	location:	south;
+	anchor:		south;
+
+	text-color: @foreground;
+	background-color: @background-t;
+
+	y-offset: -15px;
+
+}
+
+/* Configure the layout for the main box interactions */
+#mainbox {
+	children: [ message, listview, bottom-bar ];
+}
+
+/**
+ * Create the bottom bar to contain the main input and place the mode switch
+ * on the right.
+ */
+
+#bottom-bar {
+	orientation: horizontal;
+	expand: false;
+	children: [ inputbar, mode-switcher ];
+
+	background-color: @background;
+	padding: 0em 0.5em 0em 1em;
+}
+
+
+#inputbar {
+	expand: true;
+	children: [ textbox-prompt, entry ];
+	padding: 1em 0em 1em 0em;
+}
+
+#textbox-prompt {
+	expand: false;
+	content: ">";
+	font: @font-lg;
+	padding: 0em 0.75em 0 0;
+}
+
+#entry {
+	font: @font-lg;
+}
+
+#mode-switcher {
+	width: 10%;
+}
+
+#button {
+	font: @font-sm;
+
+	padding: 0.55em 0em 0.55em 0em;
+	margin: 0.45em 0 0.45em 0;
+}
+
+#button selected {
+	background-color: @primary;
+	text-color: @primary-bg;
+}
+
+/**
+ * Create the list view
+ */
+
+#listview {
+	scrollbar: false;
+	background-color: @background-t;
+
+	reverse: true;
+	fixed-height: false;
+	lines: 10;
+	dynamic: true;
+
+	margin: 0 0 -5px 0;
+
+}
+
+#element {
+	padding: 1em 1em 1em 1em;
+	background-color: @trans;
+}
+
+#element selected {
+	background-color: @primary;
+	text-color: @primary-bg;
+}
+
+#element active {
+	text-color: @primary;
+}
+
+#element urgent {
+	text-color: @alert;
+}
+
+#element-icon {
+	padding: 0 1em 0 0;
+	size: 1.5em;
+}
