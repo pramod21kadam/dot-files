@@ -1,0 +1,19 @@
+#!/bin/bash
+cache_dir="$HOME/.cache/mdmenu_run"
+cache="$cache_dir/mdmenu_history"
+if [[ ! -d $cache_dir ]]; then
+  mkdir $cache_dir
+fi
+touch $cache
+frequent=$(sort $cache | uniq -c | sort -hr | tr -d " [:digit:]")
+dpath=$(dmenu_path | grep -vxF "$frequent")
+prog=$( echo -e "$frequent\n$dpath" | dmenu -i -c -l 10)
+if [[ $prog ]]; then 
+  echo $prog >> $cache
+  length=$(wc -l < $cache)
+  if [[ $length -gt 1000 ]]; then 
+    tail -n 300 $cache | sort | uniq -c | sort -hr | tr -d " [:digit:]" &> "/tmp/mdmenu_tmp_hist$$"
+    mv "/tmp/mdmenu_tmp_hist$$" "$cache"
+  fi
+  exec $prog
+fi
